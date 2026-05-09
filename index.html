@@ -8,19 +8,45 @@
     <title>Document</title>
 </head>
 
+<header class="TopNav">
+
+    <div class="Logo">
+        <h2>Café Noir</h2>
+    </div>
+
+    <ul class="NavigationBtns">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</header>
+
 <body>
-    <header class="TopNav">
-
-        <div class="Logo">
-            <h2>Café Noir</h2>
-        </div>
-
-        <ul class="NavigationBtns">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </header>
+    <section class="home">
+        <h1>Welcome to Café Noir</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cumque! Amet velit praesentium ipsum
+            nostrum voluptatem obcaecati fugit, modi, non quidem id, ducimus odio rerum possimus maiores. Vel, illum.
+        </p>
+    </section>
 </body>
 
 </html>
+
+<script>
+    let lastScrollY = window.scrollY;
+    const nav = document.querySelector(".TopNav");
+
+    window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY) {
+            // If user scrolling down this hides the navbar :3
+            nav.style.transform = "translateY(-100%)";
+        } else {
+            // Opposite here :3
+            nav.style.transform = "translateY(0)";
+        }
+
+        lastScrollY = currentScrollY;
+    });
+</script>
