@@ -60,3 +60,11 @@ body {
 .NavigationBtns li a:hover {
     color: #7a9e7e;
 }
+
+.headline{
+    height: 100vh;
+    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/3e/71/25/outside-the-cafe.jpg?w=900&h=500&s=1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
