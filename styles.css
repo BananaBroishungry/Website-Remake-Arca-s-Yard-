@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #5e4646;
+    background-color: #1f1616;
     color: white;
     overflow-x: hidden;
 
@@ -368,11 +368,9 @@ body {
     font-size: 1.1rem;
 }
 
-.headline,
-.about-section,
-.hours-section,
+
 .location-section,
-.best-sellers {
+.headline {
     margin-bottom: 6rem;
 }
 
@@ -496,6 +494,7 @@ body {
     font-size: 3rem;
     margin-bottom: 3rem;
 }
+
 .photoshoot-grid {
     column-count: 3;
     column-gap: 1.5rem;
