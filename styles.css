@@ -1,11 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #281e1e;
+    background-color: #5e4646;
     color: white;
     overflow-x: hidden;
 
     /* #5d2f2f */
+    /* 5e4646 */
 }
 
 .home {
@@ -34,7 +35,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 2rem;
+    padding: 0 3rem;
     box-sizing: border-box;
 
     z-index: 1000;
@@ -44,6 +45,21 @@ body {
 }
 
 /* LOGO */
+.Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.Logo img {
+    height: 11rem;   
+    width: auto;
+    object-fit: contain;
+
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
 .Logo h2 {
     color: #7a9e7e;
     font-size: 2.5rem;
@@ -146,14 +162,14 @@ body {
 }
 
 .headline-content h1 {
-    color: rgb(255, 217, 212);
-    font-size: 64px;
+    color: white;
+    font-size: 7rem;
     margin: 0 0 20px 0;
 }
 
 .headline-content {
     padding-left: 80px;
-    max-width: 500px;
+    max-width: 700px;
     text-align: left;
 }
 
@@ -199,7 +215,8 @@ body {
 }
 
 .hours-block h2 {
-    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-size: 2.3rem;
     color: #7a9e7e;
     margin: 0.5rem 0;
     letter-spacing: 2px;
@@ -213,7 +230,7 @@ body {
     font-weight: 700;
     letter-spacing: -1px;
 
-    color: rgba(255, 217, 212, 0.95);
+    color: white;
 
     margin-bottom: 2rem;
     max-width: 95%;
@@ -272,24 +289,13 @@ body {
 }
 
 .location-block h2 {
-    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-size: 2.3rem;
     color: #7a9e7e;
     margin: 0.5rem 0;
     letter-spacing: 2px;
     text-transform: uppercase;
     opacity: 0.8;
-}
-
-.big-text {
-    font-size: clamp(3.2rem, 5vw, 5.2rem);
-    line-height: 1.05;
-    font-weight: 700;
-    letter-spacing: -1px;
-
-    color: rgba(255, 217, 212, 0.95);
-
-    margin-bottom: 2rem;
-    max-width: 95%;
 }
 
 .location-block+.location-block {
@@ -308,29 +314,27 @@ body {
 }
 
 .best-sellers {
-    width: 90%;
-    max-width: 1200px;
-    margin: 5rem auto;
-    padding: 2rem 0;
-    border-top: 2px solid rgba(255,255,255,0.1);
-    border-bottom: 2px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 3rem;
-    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 8rem 8%;
+
+    background-color: #241818;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-sizing: border-box;
 }
 
 .best-sellers h1 {
     margin-bottom: 3rem;
     color: #d8c3a5;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .best-seller-layout {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: 4rem;
     align-items: center;
     width: 100%;
@@ -345,19 +349,19 @@ body {
 
 .seller-row {
     display: grid;
-    grid-template-columns: 100px 1fr 100px;
+    grid-template-columns: 300px 1fr 120px;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
-    transition: transform 0.3s ease;
 }
 
 .food-img {
-    width: 90px;
-    height: 90px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
+    display: block;
 }
 
 .price {
@@ -366,16 +370,16 @@ body {
     font-weight: bold;
 }
 
-.seller-gif {
+.seller-image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.seller-gif img {
+.seller-image img {
     width: 100%;
-    max-width: 320px;
-    height: 420px;
+    height: 700px;
+
     object-fit: cover;
     border-radius: 20px;
 }
@@ -406,10 +410,11 @@ body {
 }
 
 .menu-btn:hover {
-    transform: scale(1.05);
     background-color: #91b595;
+    transform: translateY(-2px);
 }
 
 .seller-row h2 {
     color: #d8c3a5;
+    margin: 0;
 }
