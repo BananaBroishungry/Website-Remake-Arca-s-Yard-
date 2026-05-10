@@ -173,11 +173,71 @@ body {
     text-align: left;
 }
 
+/*About Section*/
+.about-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+
+    background-color: #241818;
+}
+
+.about-image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+}
+
+.about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 6rem 8%;
+    gap: 8rem;
+}
+
+.about-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.about-block h2 {
+    margin-top: 1rem;
+    font-size: 2.3rem;
+    color: #7a9e7e;
+    margin: 0.5rem 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.about-block+.about-block {
+    margin-top: 2rem;
+}
+
+.about-block p:not(.big-text) {
+    margin: 0;
+    font-size: 1.1rem;
+}
 /*Hours Section*/
 .hours-section {
     display: flex;
     width: 100%;
     height: 100vh;
+    flex-direction: row-reverse;
 
     background-color: #241818;
 }
@@ -308,6 +368,7 @@ body {
 }
 
 .headline,
+.about-section,
 .hours-section,
 .location-section {
     margin-bottom: 6rem;
