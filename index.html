@@ -42,13 +42,13 @@
 
     </section>
 
-    <section class="about-section">
-        <div class="about-image">
+    <section class="about-section fade-up">
+        <div class="about-image fade-left">
             <img src="images/Arca's Yard.jpg" alt="Cafe Chairs">
         </div>
 
         <div class="about-content">
-            <div class="about-block">
+            <div class="about-block  fade-right">
                 <p class="big-text">Our story...</p>
                 <h2>About Arca's Yard</h2>
                 <p>Arca's Yard started as a small quiet space built for slow nights, warm drinks, and conversations that
@@ -57,14 +57,14 @@
         </div>
     </section>
 
-    <section class="hours-section">
+    <section class="hours-section fade-up">
 
-        <div class="hours-image">
+        <div class="hours-image fade-right">
             <img src="/images/Arca's Yard in Baguio City.jpg" alt="girl holding a coffee in a balcony">
         </div>
 
         <div class="hours-content">
-            <div class="hours-block">
+            <div class="hours-block fade-right">
                 <p class="big-text">When the city slows down, we stay open.</p>
                 <h2>Hours</h2>
                 <p>Mon - Thurs: 9am - 7pm</p>
@@ -75,15 +75,15 @@
 
     </section>
 
-    <section class="location-section">
+    <section class="location-section fade-up">
 
-        <div class="location-image">
+        <div class="location-image .fade-left">
             <img src="/images/Beautiful art corner at Arca's yard Baguio_.jpg" alt="cafe location">
         </div>
 
         <div class="location-content">
 
-            <div class="location-block">
+            <div class="location-block fade-right">
                 <p class="big-text">Hidden away in the quiet corners of the city.</p>
                 <h2>Location</h2>
                 <p>777 Tiptop, Ambuklao Road</p>
@@ -93,7 +93,7 @@
 
     </section>
 
-    <section class="best-sellers">
+    <section class="best-sellers fade-up">
 
         <h1>Favorites from our quiet corner.</h1>
 
@@ -102,7 +102,7 @@
             <div class="seller-list">
 
                 <div class="seller-row">
-                    <img class="food-img"
+                    <img class="food-img fade-left"
                         src="https://i.pinimg.com/1200x/b5/1b/71/b51b71246cbf0629555887230657ae69.jpg">
 
                     <h2>Nachos & Fries</h2>
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="seller-row">
-                    <img class="food-img"
+                    <img class="food-img fade-left"
                         src="https://i.pinimg.com/1200x/28/c6/1a/28c61a16fe4b2691c024f75bf089f81d.jpg">
 
                     <h2>Crispy Lemon Orange Chicken</h2>
@@ -121,7 +121,7 @@
 
             </div>
 
-            <div class="seller-image">
+            <div class="seller-image fade-right">
                 <img src="/images/Logo.png">
             </div>
 
@@ -133,7 +133,7 @@
 
     </section>
 
-    <section class="photoshoot-section">
+    <section class="photoshoot-section fade-up">
 
         <div class="photoshoot-grid">
 
@@ -146,14 +146,14 @@
                     </p>
                 </div>
 
-                <div class="grid-item large">
+                <div class="grid-item large fade-left">
                     <img src="images/Arca's Yard in Baguio City.jpg">
                 </div>
 
             </div>
 
             <div class="grid-column">
-                <div class="grid-item">
+                <div class="grid-item fade-left">
                     <img src="images/Arca's Yard.jpg">
                 </div>
 
@@ -163,15 +163,15 @@
             </div>
 
             <div class="grid-column">
-                <div class="grid-item">
+                <div class="grid-item fade-left">
                     <img src="images/Cityscape.jpg">
                 </div>
 
-                <div class="grid-item small">
+                <div class="grid-item small fade-left">
                     <img src="images/IMG_3913-2.jpg">
                 </div>
 
-                <div class="grid-item small">
+                <div class="grid-item small fade-left">
                     <img src="images/IMG_3184.jpg">
                 </div>
             </div>
@@ -179,7 +179,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer fade-up">
 
         <div class="footer-top">
 
@@ -236,8 +236,32 @@
             nav.style.transform = "translateY(0)";
         }
 
+        if (window.scrollY > 50) {
+            nav.classList.add("scrolled");
+        } else {
+            nav.classList.remove("scrolled");
+        }
+
         lastScrollY = currentScrollY;
     });
+</script>
+
+<script>
+    const fadeElements = document.querySelectorAll(
+    ".fade-up, .fade-left, .fade-right"
+);
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    fadeElements.forEach((el) => observer.observe(el));
 </script>
 
 </html>

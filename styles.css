@@ -1,3 +1,98 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/*Fade animations*/
+.fade-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-left,
+.fade-right {
+    opacity: 0;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-left {
+    transform: translateX(-60px);
+}
+
+.fade-right {
+    transform: translateX(60px);
+}
+
+.fade-left.show,
+.fade-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*Text Animations*/
+.headline-content h1,
+.headline-content h3,
+.search-bar {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.headline-content h1 {
+    animation: fadeUp 1s ease forwards;
+    letter-spacing: -3px;
+}
+
+.headline-content h3 {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.search-bar {
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/*Hover*/
+.grid-item img,
+.food-img,
+.hours-image img,
+.location-image img,
+.about-image img {
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.grid-item:hover img,
+.seller-row:hover .food-img,
+.about-image:hover img,
+.hours-image:hover img,
+.location-image:hover img {
+    transform: scale(1.05);
+}
+
+.seller-row {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.seller-row:hover {
+    transform: translateX(10px);
+
+    background-color: rgba(255,255,255,0.03);
+}
+
+/*main*/
 body {
     margin: 0;
     padding: 0;
@@ -22,6 +117,8 @@ body {
     margin: 0;
 }
 
+/*Top Navigtaion Bar*/
+
 .TopNav {
     position: fixed;
     top: 0;
@@ -42,6 +139,11 @@ body {
 
     transition: transform 0.3s ease;
     backdrop-filter: blur(10px);
+}
+
+.TopNav.scrolled {
+    background-color: rgba(20,20,20,0.85);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 /* LOGO */
@@ -143,7 +245,8 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transition: transform 0.5s ease;
+    transition: transform 0.8s ease;
+    animation: heroFade 1.5s ease;
 }
 
 /*headline left shadow*/
@@ -457,7 +560,10 @@ body {
     font-size: 1rem;
     cursor: pointer;
 
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .menu-button-container {
@@ -471,8 +577,8 @@ body {
 }
 
 .menu-btn:hover {
-    background-color: #91b595;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(122,158,126,0.25);
 }
 
 .seller-row h2 {
@@ -550,6 +656,25 @@ body {
     height: 200px;
 }
 
+.grid-item {
+    position: relative;
+}
+
+.grid-item::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,0);
+
+    transition: background 0.4s ease;
+}
+
+.grid-item:hover::after {
+    background: rgba(0,0,0,0.15);
+}
+
 /*Footer Section*/
 
 .footer {
@@ -622,6 +747,30 @@ body {
 .footer-bottom p {
     color: rgba(255,255,255,0.5);
     font-size: 0.95rem;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 1024px) {
