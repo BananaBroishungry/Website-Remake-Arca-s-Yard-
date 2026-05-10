@@ -36,6 +36,7 @@
                     <div class="search-bar">
                         <input type="text" placeholder="Search our website...">
                     </div>
+                    <p class="hero-note">Located in Baguio City</p>
                 </div>
             </div>
         </div>
@@ -48,12 +49,15 @@
         </div>
 
         <div class="about-content">
+
             <div class="about-block  fade-right">
+                <div class="section-line"></div>
                 <p class="big-text">Our story...</p>
                 <h2>About Arca's Yard</h2>
                 <p>Arca's Yard started as a small quiet space built for slow nights, warm drinks, and conversations that
                     don't need noise. It's a place for people who want to pause for a bit.</p>
             </div>
+            <div class="section-line"></div>
         </div>
     </section>
 
@@ -65,12 +69,15 @@
 
         <div class="hours-content">
             <div class="hours-block fade-right">
+                <div class="section-line"></div>
                 <p class="big-text">When the city slows down, we stay open.</p>
+                <span class="section-tag">OPEN DAILY</span>
                 <h2>Hours</h2>
                 <p>Mon - Thurs: 9am - 7pm</p>
                 <p>Fri - Sun: 9am - 9pm</p>
                 <p>Wednesday: Closed</p>
             </div>
+            <div class="section-line"></div>
         </div>
 
     </section>
@@ -84,18 +91,22 @@
         <div class="location-content">
 
             <div class="location-block fade-right">
+                <div class="section-line"></div>
                 <p class="big-text">Hidden away in the quiet corners of the city.</p>
                 <h2>Location</h2>
                 <p>777 Tiptop, Ambuklao Road</p>
                 <p>Baguio City, Philippines</p>
             </div>
+            <div class="section-line"></div>
         </div>
 
     </section>
 
     <section class="best-sellers fade-up">
 
-        <h1>Favorites from our quiet corner.</h1>
+        <div class="section-line-long"></div>
+
+        <h1>Favorites from our quiet corner...</h1>
 
         <div class="best-seller-layout">
 
@@ -131,6 +142,8 @@
             <button class="menu-btn">View Menu</button>
         </div>
 
+        <div class="section-line-long"></div>
+
     </section>
 
     <section class="photoshoot-section fade-up">
@@ -140,11 +153,14 @@
             <div class="left-stack">
 
                 <div class="photoshoot-text">
+                    <div class="section-line-long"></div>
                     <h1>We offer photoshoots.</h1>
                     <p>
                         Cozy corners, warm lights, and moments worth capturing.
                     </p>
                 </div>
+
+                <div class="section-line-long"></div>
 
                 <div class="grid-item large fade-left">
                     <img src="images/Arca's Yard in Baguio City.jpg">
@@ -248,8 +264,8 @@
 
 <script>
     const fadeElements = document.querySelectorAll(
-    ".fade-up, .fade-left, .fade-right"
-);
+        ".fade-up, .fade-left, .fade-right"
+    );
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {

@@ -2,6 +2,87 @@ html {
     scroll-behavior: smooth;
 }
 
+/*Radial Gradients*/
+.about-section,
+.hours-section,
+.location-section,
+.best-sellers,
+.photoshoot-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before,
+.hours-section::before,
+.location-section::before,
+.best-sellers::before,
+.photoshoot-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(122,158,126,0.08),
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+.about-block,
+.hours-block,
+.location-block {
+    max-width: 520px;
+}
+
+.section-tag {
+    color: #7a9e7e;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+}
+
+.hero-note {
+    margin-top: 2rem;
+
+    color: rgba(255,255,255,0.65);
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.section-line {
+    width: 600px;
+    height: 5px;
+
+    background-color: #7a9e7e;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 999px;
+
+    opacity: 0.8;
+}
+
+.section-line-long {
+    width: 100%;
+    height: 5px;
+
+    background-color: #7a9e7e;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 999px;
+
+    opacity: 0.8;
+}
+
 /*Fade animations*/
 .fade-up {
     opacity: 0;
@@ -282,7 +363,7 @@ body {
     width: 100%;
     height: 100vh;
 
-    background-color: #241818;
+   background-color: #241818;
 }
 
 .about-image {
@@ -343,7 +424,7 @@ body {
     height: 100vh;
     flex-direction: row-reverse;
 
-    background-color: #241818;
+    background-color: #2a1d1d;
 }
 
 .hours-image {
@@ -394,7 +475,7 @@ body {
     font-weight: 700;
     letter-spacing: -1px;
 
-    color: white;
+    color: #d8c3a5;
 
     margin-bottom: 2rem;
     max-width: 95%;
@@ -407,6 +488,7 @@ body {
 .hours-block p:not(.big-text) {
     margin: 0;
     font-size: 1.1rem;
+    
 }
 
 /*Location Section*/
@@ -482,7 +564,7 @@ body {
     margin: 0;
     padding: 8rem 8%;
 
-    background-color: #241818;
+    background-color: #201616;
 
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -573,7 +655,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    margin-top: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .menu-btn:hover {
@@ -591,7 +674,7 @@ body {
 .photoshoot-section {
     width: 100%;
     padding: 6rem 8%;
-    background-color: #241818;
+     background-color: #2a1d1d;
     box-sizing: border-box;
 }
 
