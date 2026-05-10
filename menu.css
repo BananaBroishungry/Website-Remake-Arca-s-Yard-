@@ -1,0 +1,158 @@
+/*Menu Cards*/
+.menu-grid {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.menu-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 2rem;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.menu-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-card {
+    background-color: #7a2828;
+    border-radius: 18px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.menu-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-card:hover img {
+    transform: scale(1.05);
+}
+
+.menu-card-content {
+    padding: 1rem;
+}
+
+.menu-card-content h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.menu-card-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.4;
+}
+
+.price {
+    color: white;
+    font-weight: bold;
+}
+
+.appetizers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    width: min(95%, 1600px);
+
+    margin: 0 auto;
+    gap: 1.2rem;
+}
+
+.appetizer-grid .menu-card-img {
+    aspect-ratio: 7 / 3; /* slightly wider, less tall */
+}
+
+.breakfast-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.breakfast-grid .menu-card-img {
+    aspect-ratio: 5 / 3; /* slightly wider, less tall */
+}
+
+.app-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.app-col-1 .menu-card {
+    flex: 1;
+}
+
+.tall .menu-card-img {
+    aspect-ratio: 2.5 / 4;
+}
+
+.wide-card {
+    grid-column: span 1; 
+}
+
+.wide-card .menu-card-img {
+    aspect-ratio: 16 / 10;
+}
+
+.full-span {
+    grid-column: 1 / -1; 
+}
+
+.full-span .menu-card-img {
+    aspect-ratio: 16 / 7;
+}
+
+
+/*Navigation bar*/
+.menu-category-nav {
+    position: sticky;
+    top: 5rem; /* below TopNav */
+    z-index: 900;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    padding: 1rem 2rem;
+
+    background: rgba(20, 15, 15, 0.85);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.menu-category-nav a.active {
+    color: #7a9e7e;
+    border-bottom: 2px solid #7a9e7e;
+    padding-bottom: 4px;
+}
