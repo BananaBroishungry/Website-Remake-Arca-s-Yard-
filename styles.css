@@ -371,7 +371,8 @@ body {
 .headline,
 .about-section,
 .hours-section,
-.location-section {
+.location-section,
+.best-sellers {
     margin-bottom: 6rem;
 }
 
