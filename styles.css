@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-color: #281e1e;
     color: white;
+    overflow-x: hidden;
 
     /* #5d2f2f */
 }
@@ -86,7 +87,7 @@ body {
 
     border-radius: 50px;
 
-    background-color: rgba(255,255,255,0.12);
+    background-color: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
 
     color: white;
@@ -94,7 +95,7 @@ body {
 }
 
 .search-bar input::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /*HEADLINE SECTION*/
@@ -113,7 +114,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -129,26 +130,15 @@ body {
     transition: transform 0.5s ease;
 }
 
-/* .headline-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
-}
-
-.headline-card:hover img {
-    transform: scale(1.1);
-} */
-
 /*headline left shadow*/
 .overlay {
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        to right,
-        rgba(0,0,0,0.9) 15%,
-        rgba(0,0,0,0.5) 35%,
-        rgba(0,0,0,0.1) 75%
-    );
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.9) 15%,
+            rgba(0, 0, 0, 0.5) 35%,
+            rgba(0, 0, 0, 0.1) 75%);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -167,36 +157,152 @@ body {
     text-align: left;
 }
 
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    width: 90%;
-    max-width: 1000px;
-    margin: 3rem auto;
-    
-}
-
-.info-card {
+/*Hours Section*/
+.hours-section {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    background-color: #372121;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
-    
+    width: 100%;
+    height: 100vh;
+
+    background-color: #241818;
 }
 
-.info-card img {
-    width: 80px;
-    height: 80px;
+.hours-image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.hours-image img {
+    width: 100%;
+    height: 120%;
     object-fit: cover;
-    border-radius: 10px;
-}
-.info-card:hover {
-    transform: scale(1.03);
+
+    transform: translateY(0);
+    transition: transform 0.1s linear;
 }
 
+.hours-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    padding: 6rem 8%;
+    gap: 8rem;
+}
+
+.hours-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.hours-block h2 {
+    font-size: 1.2rem;
+    color: #7a9e7e;
+    margin: 0.5rem 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.big-text {
+    font-size: clamp(3.2rem, 5vw, 5.2rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    color: rgba(255, 217, 212, 0.95);
+
+    margin-bottom: 2rem;
+    max-width: 95%;
+}
+
+.hours-block+.hours-block {
+    margin-top: 2rem;
+}
+
+.hours-block p:not(.big-text) {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/*Location Section*/
+
+.location-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row-reverse;
+
+    background-color: #241818;
+}
+
+.location-image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.location-image img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+
+    transform: translateY(0);
+    transition: transform 0.1s linear;
+}
+
+.location-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 6rem 8%;
+    gap: 8rem;
+}
+
+.location-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.location-block h2 {
+    font-size: 1.2rem;
+    color: #7a9e7e;
+    margin: 0.5rem 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.big-text {
+    font-size: clamp(3.2rem, 5vw, 5.2rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    color: rgba(255, 217, 212, 0.95);
+
+    margin-bottom: 2rem;
+    max-width: 95%;
+}
+
+.location-block+.location-block {
+    margin-top: 2rem;
+}
+
+.location-block p:not(.big-text) {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.headline,
+.hours-section,
+.location-section {
+    margin-bottom: 6rem;
+}
