@@ -1,13 +1,21 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0e0e0e;
+    background-color: #5d2f2f;
     color: white;
 }
 
 .home {
-    height: 200vh; 
-    padding-top: 5rem; 
+    min-height: auto;
+    padding: 7rem 2rem 3rem;
+}
+
+.home h1 {
+    margin-bottom: 1rem;
+}
+
+.home p {
+    margin: 0;
 }
 
 .TopNav {
@@ -61,10 +69,74 @@ body {
     color: #7a9e7e;
 }
 
-.headline{
-    height: 100vh;
-    background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/3e/71/25/outside-the-cafe.jpg?w=900&h=500&s=1.png);
-    background-size: cover;
-    background-position: center;
-    position: relative;
+/*HEADLINE SECTION*/
+.headline {
+    display: flex;
+    justify-content: center;
+    background: none;
+    padding: 0;
 }
+
+.headline-card {
+    width: 90%;
+    max-width: 1000px;
+    height: 70vh;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.headline-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.headline-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+
+.headline-card:hover img {
+    transform: scale(1.1);
+}
+
+/*headline left shadow*/
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.9) 40%,
+        rgba(0,0,0,0.5) 65%,
+        rgba(0,0,0,0.1) 105%
+    );
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+}
+
+.headline-content h1 {
+    color: rgb(255, 217, 212);
+    font-size: 64px;
+    margin: 0 0 20px 0;
+}
+
+.headline-content {
+    padding-left: 80px;
+    max-width: 500px;
+    text-align: left;
+}
+
