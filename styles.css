@@ -648,7 +648,7 @@ body {
         box-shadow 0.3s ease;
 }
 
-.menu-button-container {
+.menu-button-container{
     width: 100%;
 
     display: flex;
@@ -829,6 +829,37 @@ body {
 .footer-bottom p {
     color: rgba(255,255,255,0.5);
     font-size: 0.95rem;
+}
+
+.footer-contact a {
+    color: #7a9e7e;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #d8c3a5;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #7a9e7e;
+    text-decoration: none;
+
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.social-link i {
+    font-size: 1.4rem;
+}
+
+.social-link:hover {
+    color: #d8c3a5;
 }
 
 @keyframes heroFade {
