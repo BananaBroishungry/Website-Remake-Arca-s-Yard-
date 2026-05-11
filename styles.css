@@ -23,11 +23,9 @@ html {
     inset: 0;
 
     background:
-        radial-gradient(
-            circle at top right,
-            rgba(122,158,126,0.08),
-            transparent 40%
-        );
+        radial-gradient(circle at top right,
+            rgba(122, 158, 126, 0.08),
+            transparent 40%);
 
     pointer-events: none;
 }
@@ -50,7 +48,7 @@ html {
 .hero-note {
     margin-top: 2rem;
 
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
 
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -170,7 +168,7 @@ html {
 .seller-row:hover {
     transform: translateX(10px);
 
-    background-color: rgba(255,255,255,0.03);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 /*main*/
@@ -180,9 +178,6 @@ body {
     background-color: #241818;
     color: white;
     overflow-x: hidden;
-
-    /* #5d2f2f */
-    /* 5e4646 */
 }
 
 .home {
@@ -198,6 +193,10 @@ body {
     margin: 0;
 }
 
+:root {
+    --topnav-height: 60px;
+}
+
 /*Top Navigtaion Bar*/
 
 .TopNav {
@@ -205,6 +204,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--topnav-height);
 
     height: 5rem;
     background-color: #1d1c1c;
@@ -223,8 +223,8 @@ body {
 }
 
 .TopNav.scrolled {
-    background-color: rgba(20,20,20,0.85);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    background-color: rgba(20, 20, 20, 0.85);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* LOGO */
@@ -363,7 +363,7 @@ body {
     width: 100%;
     height: 100vh;
 
-   background-color: #241818;
+    background-color: #241818;
 }
 
 .about-image {
@@ -392,6 +392,7 @@ body {
 }
 
 .about-block {
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -488,7 +489,7 @@ body {
 .hours-block p:not(.big-text) {
     margin: 0;
     font-size: 1.1rem;
-    
+
 }
 
 /*Location Section*/
@@ -648,7 +649,7 @@ body {
         box-shadow 0.3s ease;
 }
 
-.menu-button-container{
+.menu-button-container {
     width: 100%;
 
     display: flex;
@@ -661,7 +662,7 @@ body {
 
 .menu-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(122,158,126,0.25);
+    box-shadow: 0 10px 25px rgba(122, 158, 126, 0.25);
 }
 
 .seller-row h2 {
@@ -674,7 +675,7 @@ body {
 .photoshoot-section {
     width: 100%;
     padding: 6rem 8%;
-     background-color: #2a1d1d;
+    background-color: #2a1d1d;
     box-sizing: border-box;
 }
 
@@ -704,7 +705,7 @@ body {
 }
 
 .photoshoot-text p {
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
     line-height: 1.7;
     max-width: 90%;
 }
@@ -749,13 +750,13 @@ body {
     position: absolute;
     inset: 0;
 
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
 
     transition: background 0.4s ease;
 }
 
 .grid-item:hover::after {
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.15);
 }
 
 /*Footer Section*/
@@ -765,7 +766,7 @@ body {
     padding: 5rem 8% 2rem;
     margin-top: 6rem;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-top {
@@ -781,7 +782,7 @@ body {
 }
 
 .footer-brand p {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.7;
     max-width: 400px;
 }
@@ -801,7 +802,7 @@ body {
 
 .footer-links a {
     text-decoration: none;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
 
     transition: color 0.3s ease;
 }
@@ -811,7 +812,7 @@ body {
 }
 
 .footer-contact p {
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
     margin: 0;
     line-height: 1.6;
 }
@@ -821,13 +822,13 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 1.5rem;
     text-align: center;
 }
 
 .footer-bottom p {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 0.95rem;
 }
 
