@@ -117,6 +117,7 @@ html {
     margin: 0;
     color: white;
     font-size: 1.2rem;
+    font-family: "Playwrite FR Moderne";
 }
 
 .menu-card-content p {
@@ -324,6 +325,13 @@ html {
     display: none;
 }
 
+@font-face {
+  font-family: 'Playwrite FR Moderne';
+  src: url('Fonts/PlaywriteFRModerne-VariableFont_wght.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -353,6 +361,7 @@ html {
 
     .menu-card-content h3 {
         font-size: 1.1rem;
+        
     }
 
     .menu-card-content p {
