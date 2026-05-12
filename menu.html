@@ -40,6 +40,12 @@
     <!-- CATEGORY NAV (FOOD) -->
     <nav class="menu-category-nav">
 
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
         <div class="navcontent">
 
             <div class="nav-group">
@@ -74,13 +80,6 @@
         </div>
     </nav>
 
-    
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-   
 
     <!-- FOOD SECTIONS -->
 
@@ -263,13 +262,12 @@
                     </div>
                     <div class="menu-card-content">
                         <h3>Camote Fries</h3>
-                        <p>Freshly sliced sweet potato fries.</p>
+                        <p>Freshly sliced sweet potato fries.
+                        </p>
                         <span class="price">₱180</span>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
@@ -332,7 +330,7 @@
                         <img src="https://i.pinimg.com/736x/9b/45/c3/9b45c3e5d79e202a32efbc8d76ed2103.jpg">
                     </div>
                     <div class="menu-card-content">
-                        <h3>French Toast</h3>
+                        <h3>Camote Fries</h3>
                         <p>Thick-cut bread dipped in egg custard, pan-fried to golden perfection</p>
                         <span class="price">₱150</span>
                     </div>
@@ -1517,15 +1515,6 @@
                     }
                 });
             }
-        });
-    </script>
-
-    <script>
-        const menuToggle = document.querySelector(".menu-toggle");
-        const mobileMenu = document.querySelector(".mobile-menu");
-
-        menuToggle.addEventListener("click", () => {
-            mobileMenu.classList.toggle("show");
         });
     </script>
 
