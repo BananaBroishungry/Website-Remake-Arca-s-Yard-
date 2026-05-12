@@ -306,3 +306,11 @@ body {
 .footer-contact a:hover {
     color: #d8c3a5;
 }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+    
+}

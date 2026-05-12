@@ -40,11 +40,7 @@
     <!-- CATEGORY NAV (FOOD) -->
     <nav class="menu-category-nav">
 
-        <button class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <div class="nav-content">
+        <div class="navcontent">
 
             <div class="nav-group">
                 <span class="nav-label">Food</span>
@@ -78,6 +74,13 @@
         </div>
     </nav>
 
+    
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+   
 
     <!-- FOOD SECTIONS -->
 
@@ -1524,6 +1527,13 @@
         menuToggle.addEventListener("click", () => {
             mobileMenu.classList.toggle("show");
         });
+    </script>
+
+    <script>
+        function toggleMenu() {
+            const navcontent = document.querySelector('.navcontent');
+            navcontent.classList.toggle('active')
+        }
     </script>
 </body>
 

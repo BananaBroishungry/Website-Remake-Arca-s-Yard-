@@ -184,6 +184,21 @@ html {
     aspect-ratio: 16 / 7;
 }
 
+/*Hamburger*/
+.hamburger {
+    display: hidden;
+    overflow: hidden;
+}
+
+.fa-solid {
+    display: hidden;
+    overflow: hidden;
+}
+
+.fa-bars {
+    overflow:hidden ;
+    display: hidden;
+}
 /*Navigation bar*/
 .menu-category-nav {
     position: sticky;
@@ -436,6 +451,7 @@ html {
 
         font-size: 1.2rem;
         cursor: pointer;
+        z-index: 101;
     }
 
     .menu-category-nav {
@@ -475,7 +491,7 @@ html {
         z-index: 999;
     }
 
-    .nav-content {
+    .navcontent {
         display: none;
     }
 
