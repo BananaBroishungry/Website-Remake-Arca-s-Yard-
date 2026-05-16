@@ -142,14 +142,14 @@ body {
     color: #7a9e7e;
 }
 
-.photoshoot-section {
+.photoshoot-page {
     width: 90%;
     max-width: 1200px;
 
     margin: 6rem auto;
 }
 
-.photoshoot-grid {
+.photoshoot-layout {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
@@ -321,11 +321,11 @@ body {
     }
 
     /* MAIN SECTION */
-    .photoshoot-section {
+    .photoshoot-page {
         width: 92%;
     }
 
-    .photoshoot-grid {
+    .photoshoot-layout {
         gap: 2rem;
     }
 
@@ -381,12 +381,12 @@ body {
     }
 
     /* MAIN SECTION */
-    .photoshoot-section {
+    .photoshoot-page {
         width: 92%;
         margin: 5rem auto 3rem;
     }
 
-    .photoshoot-grid {
+    .photoshoot-layout {
         grid-template-columns: 1fr;
         gap: 2rem;
     }

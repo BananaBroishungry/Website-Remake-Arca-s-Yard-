@@ -19,9 +19,16 @@
             <img src="images/Logo.png" alt="Arca's Yard Logo">
         </div>
 
-        <ul class="NavigationBtns">
+        <div class="nav-overlay" id="navOverlay"></div>
+
+        <button class="hamburger" id="hamburger">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <ul class="NavigationBtns" id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="photoshoot.html">Photoshoots</a></li>
             <li><a href="#footer-contact">Contact</a></li>
         </ul>
 
@@ -1449,36 +1456,32 @@
 
     </script>
 
+    <!-- This script highlights the top navigation buttons -->
+
     <script>
-        const root = document.documentElement;
-        const nav = document.querySelector(".TopNav");
+        const topNavLinks = document.querySelectorAll(".NavigationBtns li a");
 
-        let lastScrollY = window.scrollY;
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-        window.addEventListener("scroll", () => {
-            const currentScrollY = window.scrollY;
+        topNavLinks.forEach(link => {
+            const linkPage = link.getAttribute("href");
 
-            if (currentScrollY > lastScrollY) {
-
-                nav.style.transform = "translateY(-100%)";
-
-
-                root.style.setProperty("--topnav-height", "10px");
-            } else {
-
-                nav.style.transform = "translateY(0)";
-
-
-                root.style.setProperty("--topnav-height", "90px");
+            if (linkPage === currentPage) {
+                link.classList.add("active");
             }
-
-            lastScrollY = currentScrollY;
         });
     </script>
 
+    <!-- This script highlights the menu categories -->
+
     <script>
+        const nav = document.querySelector(".TopNav");
         const sections = document.querySelectorAll(".menu-section");
         const navLinks = document.querySelectorAll(".menu-category-nav a");
+
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+        let lastActive = "";
 
         function centerLink(link) {
             const container = link.parentElement;
@@ -1489,15 +1492,25 @@
             });
         }
 
-        let lastActive = "";
+        function handleScroll() {
+            const currentScrollY = window.scrollY;
 
-        window.addEventListener("scroll", () => {
+            /* NAVBAR HIDE/SHOW */
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                nav.classList.add("hide-nav");
+                document.body.classList.add("nav-hidden");
+            } else {
+                nav.classList.remove("hide-nav");
+                document.body.classList.remove("nav-hidden");
+            }
+
+            /* ACTIVE SECTION TRACKING*/
             let current = "";
 
             sections.forEach(section => {
                 const top = section.offsetTop;
 
-                if (window.scrollY + 250 >= top) {
+                if (currentScrollY + 250 >= top) {
                     current = section.id;
                 }
             });
@@ -1515,6 +1528,16 @@
                     }
                 });
             }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+            }
         });
     </script>
 
@@ -1523,6 +1546,31 @@
             const navcontent = document.querySelector('.navcontent');
             navcontent.classList.toggle('active')
         }
+    </script>
+
+    <!-- HAMBURGER -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("navLinks");
+            const overlay = document.getElementById("navOverlay");
+
+            function toggleMenu() {
+                navLinks.classList.toggle("show");
+                overlay.classList.toggle("show");
+            }
+
+            hamburger.addEventListener("click", toggleMenu);
+            overlay.addEventListener("click", toggleMenu);
+
+            document.querySelectorAll(".NavigationBtns a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("show");
+                    overlay.classList.remove("show");
+                });
+            });
+        });
     </script>
 </body>
 

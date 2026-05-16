@@ -17,9 +17,16 @@
             <img src="images/Logo.png">
         </div>
 
-        <ul class="NavigationBtns">
-            <li><a href="#home">Home</a></li>
+        <div class="nav-overlay" id="navOverlay"></div>
+
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="NavigationBtns" id="navLinks">
+            <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
+            <li><a href="photoshoot.html">Photoshoots</a></li>
             <li><a href="#footer-contact">Contact</a></li>
         </ul>
     </header>
@@ -259,6 +266,8 @@
     </footer>
 </body>
 
+<!-- This is the script for the navbars hiding and adjusting -->
+
 <script>
     let lastScrollY = window.scrollY;
     const nav = document.querySelector(".TopNav");
@@ -284,6 +293,24 @@
     });
 </script>
 
+<!-- This highlights the top navigation btns -->
+
+<script>
+    const navLinks = document.querySelectorAll(".NavigationBtns li a");
+
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+</script>
+
+<!-- FADE SCRIPT -->
+
 <script>
     const fadeElements = document.querySelectorAll(
         ".fade-up, .fade-left, .fade-right"
@@ -300,6 +327,31 @@
     });
 
     fadeElements.forEach((el) => observer.observe(el));
+</script>
+
+<!-- HAMBURGER -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+        const overlay = document.getElementById("navOverlay");
+
+        function toggleMenu() {
+            navLinks.classList.toggle("show");
+            overlay.classList.toggle("show");
+        }
+
+        hamburger.addEventListener("click", toggleMenu);
+        overlay.addEventListener("click", toggleMenu);
+
+        document.querySelectorAll(".NavigationBtns a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("show");
+                overlay.classList.remove("show");
+            });
+        });
+    });
 </script>
 
 </html>
